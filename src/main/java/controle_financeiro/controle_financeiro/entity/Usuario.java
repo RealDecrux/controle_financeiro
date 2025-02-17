@@ -31,7 +31,7 @@ public class Usuario {
     private String senha;
 
     @ManyToMany(mappedBy = "usuario")
-    private List<AreaControle> areaControle; 
+    private List<AreaControle> areaControle;
 
     // Getters e setters
 

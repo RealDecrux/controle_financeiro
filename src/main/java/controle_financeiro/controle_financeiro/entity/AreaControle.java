@@ -19,6 +19,7 @@ public class AreaControle{
     private String descricao;
 
     private Double limiteGasto;
+
     
     @ManyToMany
     @JoinTable(

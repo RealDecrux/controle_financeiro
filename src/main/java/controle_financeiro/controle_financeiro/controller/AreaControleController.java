@@ -4,6 +4,7 @@ import controle_financeiro.controle_financeiro.entity.AreaControle;
 import controle_financeiro.controle_financeiro.service.AreaControleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class AreaControleController {
     public ResponseEntity<AreaControle> criarAreaControle(@RequestBody AreaControle areaControle) {
         
         AreaControle novaAreaControle = areaControleService.criarAreaControle(areaControle);
-        return ResponseEntity.ok(novaAreaControle);
+        return ResponseEntity.status(HttpStatus.CREATED).body(novaAreaControle);
 
     }
 
@@ -41,7 +42,7 @@ public class AreaControleController {
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/buscarPorId/{id}")
     public ResponseEntity<AreaControle> buscarPorId(@PathVariable("id") Long id){
 
 
